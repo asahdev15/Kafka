@@ -1,0 +1,19 @@
+server:
+  port: 8082
+
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
+
+kafka:
+  bootstrap-servers: localhost:9092
+  consumer:
+    group-id: cg-1
+  topic:
+    test: test
+    request: request.topic
+    user: topic-user
+    product: topic-product
+  auto-offset-reset: earliest
+
+

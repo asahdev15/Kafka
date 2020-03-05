@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
+
+kafka:
+  bootstrap-servers: localhost:9092
+  consumer:
+    group-id: consumer-group
+  topic:
+    request: request.topic
+    reply: reply.topic
+    user: topic-user
+    product: topic-product
+
+
