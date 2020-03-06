@@ -1,9 +1,6 @@
 package producer;
 
-import com.asahdev.common.models.NumbersModel;
-import com.asahdev.common.models.ResultSumModel;
-import com.asahdev.common.models.User;
-import models.Product;
+import asahdev.models.*;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.header.internals.RecordHeader;
 import org.springframework.beans.factory.annotation.Autowired;

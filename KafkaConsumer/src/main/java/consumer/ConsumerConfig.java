@@ -1,8 +1,6 @@
 package consumer;
 
-import com.asahdev.common.models.NumbersModel;
-import com.asahdev.common.models.User;
-import models.Product;
+import asahdev.models.*;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -23,6 +21,7 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
 
 @Configuration
 @EnableKafka

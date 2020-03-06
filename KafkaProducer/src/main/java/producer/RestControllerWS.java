@@ -1,9 +1,7 @@
 package producer;
 
-import com.asahdev.common.models.NumbersModel;
-import com.asahdev.common.models.ResultSumModel;
-import com.asahdev.common.models.User;
-import models.*;
+import asahdev.models.*;
+import asahdev.utils.JsonUtils;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,8 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.kafka.requestreply.RequestReplyFuture;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.web.bind.annotation.*;
-import utils.JsonUtils;
-
 import java.util.concurrent.ExecutionException;
 
 @RestController

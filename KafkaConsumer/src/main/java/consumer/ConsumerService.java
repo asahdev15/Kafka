@@ -1,13 +1,8 @@
 package consumer;
 
-import com.asahdev.common.models.NumbersModel;
-import com.asahdev.common.models.ResultSumModel;
-import com.asahdev.common.models.User;
+import asahdev.models.*;
+import asahdev.utils.*;
 import lombok.extern.slf4j.Slf4j;
-import models.Product;
-import models.ProductV2;
-import models.ProductV3;
-import models.ProductV4;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.Acknowledgment;
@@ -16,10 +11,14 @@ import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Service;
-import utils.JsonUtils;
-import utils.RestUtils;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.List;
+
+import org.springframework.web.client.RestTemplate;
+
+import java.net.URI;
 
 @Slf4j
 @Service
@@ -71,7 +70,7 @@ public class ConsumerService {
     {
         log.info("---- START ----");
         log.info("Consume | Payload | " + payload.value());
-        RestUtils.post("http://localhost:8080/api/v1/user", User.class, payload.value());
+        post("http://localhost:8080/api/v1/user", User.class, payload.value());
         log.info("---- END ----");
     }
 
@@ -91,6 +90,26 @@ public class ConsumerService {
             recieved = "V1 recieved";
         }
         log.info(recieved + " : " + product + ", Payload : " + JsonUtils.convertToJson(product));
+    }
+
+    public static Object get(String url, Class objectClass){
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.getForObject(url, objectClass);
+    }
+
+    public static URI post(String url, Class objectClass, Object item) {
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.postForLocation(url, item, objectClass);
+    }
+
+    public static void update(String url, Class objectClass, Object item) {
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.put(url, item);
+    }
+
+    public static void delete(String url) {
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.delete(url);
     }
 
 }

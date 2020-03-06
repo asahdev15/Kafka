@@ -1,9 +1,9 @@
 package producer;
 
-import com.asahdev.common.models.NumbersModel;
-import com.asahdev.common.models.ResultSumModel;
-import com.asahdev.common.models.User;
-import models.Product;
+import asahdev.models.NumbersModel;
+import asahdev.models.ResultSumModel;
+import asahdev.models.User;
+import asahdev.models.Product;
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
