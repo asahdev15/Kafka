@@ -14,10 +14,10 @@
     </parent>
 
     <properties>
-        <asahdev.version>1.0.0-SNAPSHOT</asahdev.version>
         <java.version>8</java.version>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+
         <lombok.version>1.18.12</lombok.version>
         <guava.version>[24.1.1,)</guava.version>
         <kafka.client.version>2.3.0</kafka.client.version>
@@ -27,7 +27,7 @@
         <dependency>
             <groupId>asahdev</groupId>
             <artifactId>CommonLibs</artifactId>
-            <version>${asahdev.version}</version>
+            <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

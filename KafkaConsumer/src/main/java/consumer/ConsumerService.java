@@ -89,7 +89,7 @@ public class ConsumerService {
         }else {
             recieved = "V1 recieved";
         }
-        log.info(recieved + " : " + product + ", Payload : " + JsonUtils.convertToJson(product));
+        log.info(recieved + " : " + product + ", Payload : " + JsonUtils.writeToJson(product));
     }
 
     public static Object get(String url, Class objectClass){

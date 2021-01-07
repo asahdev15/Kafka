@@ -38,14 +38,14 @@ public class RestControllerWS {
 
     @PostMapping(value = "/sendUser")
     public ResponseEntity<Void> sendUser(@RequestBody User user){
-        System.out.println("REST | Received Payload : " + JsonUtils.convertToJson(user));
+        System.out.println("REST | Received Payload : " + JsonUtils.writeToJson(user));
         kafkaProducerService.sendUser(user);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PostMapping(value = "/sendProduct")
     public ResponseEntity<ProductDetails> updateProduct(@RequestBody Product product){
-        System.out.println("---------------------> Received Product : " + product + ", Payload : " + JsonUtils.convertToJson(product));
+        System.out.println("---------------------> Received Product : " + product + ", Payload : " + JsonUtils.writeToJson(product));
         kafkaProducerService.sendProduct(product);
         return new ResponseEntity<>(checkProductVersion(product), HttpStatus.OK);
     }
