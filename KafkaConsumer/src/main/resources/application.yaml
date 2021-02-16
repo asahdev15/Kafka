@@ -7,13 +7,9 @@ spring:
 
 kafka:
   bootstrap-servers: localhost:9092
-  consumer:
-    group-id: cg-1
+  consumer-group:
+    product: cg-products
   topic:
-    test: test
-    request: request.topic
-    user: topic-user
-    product: topic-product
-  auto-offset-reset: earliest
+    product: products
 
 

@@ -1,0 +1,19 @@
+
+curl -H 'Content-Type: application/json' -X POST "http://localhost:8081/insert"
+
+curl -H 'Content-Type: application/json' -X POST "http://localhost:8081/product" -d'{"category":"AC","id":1}'
+
+
+
+
+./bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+./bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic users
+./bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic users
+
+
+./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic users --from-beginning
+
+
+./bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+./bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group NAME --describe
+

@@ -7,11 +7,11 @@ import javax.annotation.PostConstruct;
 
 @Slf4j
 @SpringBootApplication
-@ComponentScan( basePackages = {"consumer"})
-public class ConsumerApplication {
+@ComponentScan( basePackages = {"config", "service"})
+public class MainApp {
 
     public static void main(String[] args) {
-        SpringApplication.run(ConsumerApplication.class, args);
+        SpringApplication.run(MainApp.class, args);
     }
 
     @PostConstruct

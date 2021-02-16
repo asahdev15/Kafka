@@ -8,11 +8,8 @@ spring:
 kafka:
   bootstrap-servers: localhost:9092
   consumer:
-    group-id: consumer-group
+    group-id: cg-numbers-sum
   topic:
-    request: request.topic
-    reply: reply.topic
-    user: topic-user
-    product: topic-product
-
-
+    product: products
+    numbers: numbers
+    numbersSum: numbers-sum
